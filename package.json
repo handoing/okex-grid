@@ -1,0 +1,27 @@
+{
+  "name": "okex-grid",
+  "version": "1.0.0",
+  "description": "量化交易",
+  "main": "./src/index.js",
+  "scripts": {
+		"start": "node bootstrap.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/handoing/okex-grid.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/handoing/okex-grid/issues"
+  },
+  "homepage": "https://github.com/handoing/okex-grid#readme",
+  "dependencies": {
+    "@okfe/okex-node": "0.0.52",
+    "nconf": "^0.11.2",
+    "sleep": "^6.3.0",
+    "uid": "^2.0.0"
+  }
+}
