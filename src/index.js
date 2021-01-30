@@ -3,10 +3,10 @@ const { sleep } = require('sleep');
 const Trader = require('./trader');
 const OkexApi = require('./api');
 
-const breakTime = 10;
+const breakTime = 30;
 
 class OkexGrid {
-	constructor({ user, config }) {
+	constructor({ user, config, log }) {
 		this.trader = new Trader({ user, config });
 
 		this.api = new OkexApi({
@@ -15,6 +15,7 @@ class OkexGrid {
 			passphrase: this.trader.get('passphrase'),
 			apiUri: this.trader.get('apiUri'),
 			timeout: this.trader.get('timeout'),
+			log
 		})
 	}
 	async run() {

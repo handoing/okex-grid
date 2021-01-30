@@ -4,7 +4,7 @@
   "description": "量化交易",
   "main": "./src/index.js",
   "scripts": {
-		"start": "node bootstrap.js",
+    "start": "node bootstrap.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,5 +23,8 @@
     "nconf": "^0.11.2",
     "sleep": "^6.3.0",
     "uid": "^2.0.0"
+  },
+  "devDependencies": {
+    "axios": "^0.21.1"
   }
 }
