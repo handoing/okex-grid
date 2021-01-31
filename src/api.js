@@ -24,7 +24,7 @@ class OkexApi {
 		const params = this._order(instrument, size, 'buy', price);
 		const [ err, data = {} ] = await to(this.authClient.spot().postOrder(params));
 
-		if (data.order_id) {
+		if (data.order_id && data.order_id !== -1) {
 			this.log(`报警：币种为：${instrument}。买单价为：${price}。买单量为：${size}。client_oid：${data.client_oid}。order_id：${data.order_id}。error_message：${data.error_message}`)
 			return data.order_id
 		}
@@ -35,16 +35,7 @@ class OkexApi {
 		const params = this._order(instrument, size, 'sell', price);
 		const [ err, data = {} ] = await to(this.authClient.spot().postOrder(params));
 
-		if (!data.result) {
-			const params2 = this._order(instrument, size - 0.001, 'sell', price);
-			const [ err2, data2 = {} ] = await to(this.authClient.spot().postOrder(params2));
-			if (data2.order_id) {
-				this.log(`报警：币种为：${instrument}。卖单价为：${price}。卖单量为：${size}。client_oid：${data2.client_oid}。order_id：${data2.order_id}。error_message：${data2.error_message}`)
-				return data2.order_id
-			}
-		}
-
-		if (data.order_id) {
+		if (data.order_id && data.order_id !== -1) {
 			this.log(`报警：币种为：${instrument}。卖单价为：${price}。卖单量为：${size}。client_oid：${data.client_oid}。order_id：${data.order_id}。error_message：${data.error_message}`)
 			return data.order_id
 		}
