@@ -30,6 +30,11 @@ class OkexGrid {
 			quantity = this.trader.get_quantity();
 			step = this.trader.get_step();
 
+			if (!cur_market_price) {
+				console.log(`获取当前市价失败`);
+				break;
+			}
+
 			if (grid_buy_price >= cur_market_price) {
 				const order_id = await this.api.buy_limit_msg(cointype, quantity, grid_buy_price);
 				if (order_id) {
