@@ -1,4 +1,3 @@
-const nconf = require('nconf');
 const { sleep } = require('sleep');
 const Trader = require('./trader');
 const OkexApi = require('./api');
@@ -32,7 +31,7 @@ class OkexGrid {
 
 			if (!cur_market_price) {
 				console.log(`获取当前市价失败`);
-				break;
+				continue;
 			}
 
 			if (grid_buy_price >= cur_market_price) {
@@ -41,7 +40,7 @@ class OkexGrid {
 					this.trader.modify_price(grid_buy_price, step + 1);
 					sleep(breakTime);
 				} else {
-					break;
+					continue;
 				}
 			} else if (grid_sell_price < cur_market_price) {
 				if (step === 0) {
@@ -52,7 +51,7 @@ class OkexGrid {
 						this.trader.modify_price(grid_sell_price, step - 1);
 						sleep(breakTime);
 					} else {
-						break;
+						continue;
 					}
 				}
 			} else {

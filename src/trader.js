@@ -22,9 +22,9 @@ class Trader {
 	get_quantity (exchange_method = true) {
 		let cur_step = exchange_method ? nconf.get('step') : nconf.get('step') - 1;
 		let quantity_arr = nconf.get('quantity');
-		let quantity;
+    let quantity;
 		if (cur_step < quantity_arr.length) {
-			quantity = cur_step === 0 ? quantity_arr[0] : quantity_arr[cur_step]
+			quantity = quantity_arr[cur_step]
 		} else {
 			quantity = quantity_arr[quantity_arr.length - 1]
 		}
