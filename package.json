@@ -4,6 +4,7 @@
   "description": "量化交易",
   "main": "./src/index.js",
   "scripts": {
+    "init": "plop",
     "start": "node bootstrap.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -25,6 +26,7 @@
     "uid": "^2.0.0"
   },
   "devDependencies": {
-    "axios": "^0.21.1"
+    "axios": "^0.21.1",
+    "plop": "^2.7.4"
   }
 }
