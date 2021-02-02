@@ -1,4 +1,5 @@
 {
+  "apiUri": "https://www.okexcn.com",
 	"next_buy_price": 134,
 	"grid_sell_price": 136,
 	"step": 0,
