@@ -1,6 +1,6 @@
 # okex-grid
 
-针对okex平台的现货网格交易策略量化项目
+针对okex平台的币币网格交易策略量化项目
 
 [binance-quantization](https://github.com/hengxuZ/binance-quantization) nodejs版本
 
