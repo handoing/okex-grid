@@ -25,5 +25,5 @@ module.exports = function (plop) {
         templateFile: 'plop/user.plop'
       }
     ]
-});
+  });
 };
